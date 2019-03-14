@@ -1,0 +1,80 @@
+*muse-vim.txt*   For neovim version 0.3.4  (Neo)vim wrapper around muse reading-log search CLI.
+
+Version: 0.2.0
+Author: metaporia (gitlab)
+License: MIT
+License: MIT license
+
+CONTENTS                        *muse-vim-contents*
+
+Overview                        |muse-vim-overview|
+Options                         |muse-vim-options|
+Bindings                        |muse-vim-bindings|
+
+
+==============================================================================
+OVERVIEW		     			*muse-vim-overview*
+
+
+*muse-vim* is a simple wrapper around the *muse* reading log CLI; see at
+https://gitlab.com/metaporia/muse.
+
+*muse-vim* requires verison 0.2.0 of *muse* .
+
+*muse-vim* provides bindings/functions for timestamping log entries, inserting
+word comparision dividers, and fetching the most recent read entry
+attribution.
+
+==============================================================================
+BINDINGS						*muse-vim-bindings*
+
+<prefix>t                       *muse-vim-new-log-entry*
+
+        Calls `LogEntry` to add new timestamp at bottom of file with correct
+        indention. See `examples/` in *muse* repository for complete log
+        file.
+
+<prefix>cr                      *muse-vim-continue-reading*
+
+        Calls `LastRead` to add read entry with most recent author/title attribution. 
+        (See *muse* repo for details.)
+
+<prefix>v
+        Meant to proceed a `dvs`, definition comparison entry; adds divider as in: 
+
+        `18:52:15 λ. dvs extant : to stand out; still existing; outstanding`
+                    `--- vs ---`
+                    `existent : existing; taking place; having being`
+
+
+==============================================================================
+OPTIONS				     		*muse-vim-options*
+
+                                
+muse_vim_prefix                 *muse-vim-options-prefix*
+            
+        Replace default <leader> with <prefix> of choice.
+
+muse_vim_log_dir               *muse-vim-options-log_dir*
+    
+        Replace default location of log entry directory ~/.muse/entries.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==============================================================================
+vim:tw=78:ts=8:ft=help:norl:noet:fen:noet:
