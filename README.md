@@ -79,3 +79,10 @@ nnoremap <leader>w :w<CR>
 set number
 set relativenumber
 ```
+
+## On versioning
+
+While I'll try to comply with the semver specification, the version of muse-vim
+will *always* reflect a/the version of muse with which it's compatible. If this
+violates semver, so be it&mdash;however, I will at all costs avoid such
+violations except when it's necessary to match version numbers.
