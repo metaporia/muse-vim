@@ -23,6 +23,13 @@ if !exists('g:muse_vim_prefix')
     let g:muse_vim_prefix = '<leader>'
 endif
 
+" I set mine to the ~/sputum/muse and sym-link it to ~/.muse/entries; that is I
+" `let g:muse_vim_log_dir = ~/sputum/muse`.
+if !exists('g:muse_vim_log_dir')
+    let g:muse_vim_log_dir = '~/.muse/entries'
+endif
+
+
 if g:muse_vim_map_keys
     " continue reading: insert log entry with attribution of most recently read
     " book and author.
@@ -31,12 +38,6 @@ if g:muse_vim_map_keys
     " indentation
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."t Go<C-r>=strftime(\"%H:%M:%S λ. \")<CR>"
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap <buffer> ".g:muse_vim_prefix."v o<Esc>16i <Esc>a--- vs ---<Esc>o"
-endif
-
-" I set mine to the ~/sputum/muse and sym-link it to ~/.muse/entries; that is I
-" `let g:muse_vim_log_dir = ~/sputum/muse`.
-if !exists('g:muse_vim_log_dir')
-    let g:muse_vim_log_dir = '~/.muse/entries'
 endif
 
 " Auto commands
