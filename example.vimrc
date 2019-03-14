@@ -4,6 +4,10 @@ call plug#end()
 
 let g:muse_vim_log_dir = ~/sputum/muse
 
+set tabstop = 4
+set shiftwidth = 4
+set expandtab
+
 inoremap jk <Esc>
 let mapleader =','
 nnoremap <leader>w :w<CR>
