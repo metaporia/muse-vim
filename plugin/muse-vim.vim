@@ -29,7 +29,7 @@ if g:muse_vim_map_keys
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."cr :LastRead<CR>"
     " insert log entry header/timestamp at bottom of file with appropriate
     " indentation
-    execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."tGo<C-r>=strftime(\"%H:%M:%S λ. \")<CR>"
+    execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."t Go<C-r>=strftime(\"%H:%M:%S λ. \")<CR>"
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap <buffer> ".g:muse_vim_prefix."v o<Esc>16i <Esc>a--- vs ---<Esc>o"
 endif
 
