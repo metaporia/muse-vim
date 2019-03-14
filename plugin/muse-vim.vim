@@ -1,4 +1,9 @@
 " Muse 
+" TODO 
+" □  refactor w filetype=muse
+" □  add syntax highlighting 
+" □  add search interface (prepopulate scratch buffer w default `Input` vals;
+"    users navigates to fields relevant to lookup, commits search; voilà! 
 
 function! MuseLogEntry()
     execute "normal! Go\<C-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
