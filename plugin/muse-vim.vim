@@ -30,7 +30,7 @@ if g:muse_vim_map_keys
     " insert log entry header/timestamp at bottom of file with appropriate
     " indentation
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."tGo<C-r>=strftime(\"%H:%M:%S λ. \")<CR>"
-    execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap <buffer> ".g_muse_vim_prefix."v o<Esc>16i <Esc>a--- vs ---<Esc>o"
+    execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap <buffer> ".g:muse_vim_prefix."v o<Esc>16i <Esc>a--- vs ---<Esc>o"
 endif
 
 " I set mine to the ~/sputum/muse and sym-link it to ~/.muse/entries; that is I
