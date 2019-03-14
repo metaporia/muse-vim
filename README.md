@@ -16,9 +16,11 @@ Plug 'https://gitlab.com/metaporia/muse-vim'
 
 ### Other plugin managers
 
-I have not tested muse-vim with pathogen, or vim's new built-in package
+I have not tested muse-vim with pathogen or vim's new built-in package
 management system&mdash;however, the plugin's structure conforms to pathogen's
-specification, and *should* work with vanilla vim.
+specification and *should* work with vanilla vim (N.B. that this is a baseless
+claim made intuitively to salve *my* qualms regarding compatibility; please let
+me know if you encounter difficulty).
 
 ## Usage
 
@@ -40,26 +42,26 @@ buffers in `g:muse_vim_log_dir`, which defaults to ~/.muse/entries):
   divider: 
 
 ```
-18:52:15 λ. dvs word1 : ...
+18:52:15 λ. dvs extant : to stand out; still existing; outstanding
                 --- vs ---
-                word2 : ...
+                existent : existing; taking place; having being
 ```
 
 ### Note on workflow
 
-A normal log session, for me that is, proceeds as follows:
+A normal log session&mdash;for me, that is&mdash;proceeds as follows:
 
 1. call `log` in bash (see muse for script);
 2. invoke `LastRead` to use current attribution;
 3. insert timestamp with `LogEntry` and while in insert mode set indentation
-   with `<c-t>`; and
+   with `<C-t>`; and
 4. log definitions, quotes, phrases, commentary, &c with vim and
    vigor.
 
 
 ### Example [neo]vim config 
 
-```
+```vim
 call plug#begin('~/.local/share/nvim/plugged')
 Plug "https://gitlab.com/metaporia/muse-vim"
 call plug#end()
