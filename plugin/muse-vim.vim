@@ -21,7 +21,7 @@ endif
 
 " Sets default prefix to `<leader>`
 if !exists('g:muse_vim_prefix')
-    let g:muse_vim_map_keys = '<leader>'
+    let g:muse_vim_prefix = '<leader>'
 endif
 
 if g:muse_vim_map_keys
