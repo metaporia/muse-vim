@@ -5,16 +5,20 @@
 " □  add search interface (prepopulate scratch buffer w default `Input` vals;
 "    users navigates to fields relevant to lookup, commits search; voilà! 
 
+" Insert entry header/timestamp at the end of the current log file.
 function! MuseLogEntry()
     execute "normal! Go\<C-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
     call feedkeys('A', ' ')
 endfunction
 
+" Fetch last read author attribution and insert entry at the end of the current
+" log file.
 function! MuseLastRead()
     call MuseLogEntry()
     call feedkeys(system("muse lastRead --suppress-newline") . "\<ESC>") 
 endfunction
 
+" Caluculates and opens (and format) current date's log file name 
 function! MuseToday()
     let l:year = strftime("%Y")[2:3] . "."
     let l:day_month = strftime("%m.%d")
