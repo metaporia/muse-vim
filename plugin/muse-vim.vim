@@ -15,7 +15,15 @@ function! MuseLastRead()
     call feedkeys(system("muse lastRead --suppress-newline") . "\<ESC>") 
 endfunction
 
-command! LogEntry :call LogEntry()
+function! MuseToday()
+    let l:year = strftime("%Y")[2:3] . "."
+    let l:day_month = strftime("%m.%d")
+    let l:cmd =  "edit " . g:muse_vim_log_dir . "/" . l:year . l:day_month
+    execute l:cmd
+endfunction
+
+command! LogToday :call MuseToday()
+command! LogEntry :call MuseLogEntry()
 command! LastRead call MuseLastRead()
 
 " KEYMAPS
