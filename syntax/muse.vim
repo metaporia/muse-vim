@@ -16,7 +16,7 @@ endif
 
 " MATCHES
 
-syn match timestamp '^ *\d\+:\d\+:\d\+'
+"syn match timestamp '^ *\d\+:\d\+:\d\+'
 "syn match titleStr '\(\(read\|begin to read\|finish reading\|finish\)\ \+\)\@<=\".*\"'
 syn match quoteBody '\. q\_s\+\zs\"\_.\{-}"'
 " match from (phr | phrase | d | dvs) until ' :'
@@ -28,7 +28,6 @@ syn match quoteBody '\. q\_s\+\zs\"\_.\{-}"'
 "syn region quotedArea start='"' end='"'
 
 
-let b:current_syntax = "muse"
 
 "hi def link quotedArea String
 hi def link quoteBody String
@@ -42,3 +41,5 @@ hi def link quoteBody String
 "hi def link commentaryPrefix Keyword
 "hi def link dialoguePrefix Keyword
 "hi def link quotePrefix Keyword
+
+let b:current_syntax = "muse"
