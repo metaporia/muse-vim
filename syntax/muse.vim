@@ -17,10 +17,10 @@ endif
 " MATCHES
 
 syn match timestamp '^ *\d\+:\d\+:\d\+'
-syn match titleStr '\(\(read\|begin to read\|finish reading\|finish\)\ \+\)\@<=\".*\"'
+"syn match titleStr '\(\(read\|begin to read\|finish reading\|finish\)\ \+\)\@<=\".*\"'
 syn match quoteBody '\. q\_s\+\zs\"\_.\{-}"'
 " match from (phr | phrase | d | dvs) until ' :'
-syn match headword '\(\. \(dvs\|d\|phrase\|phr\)\|--- vs ---\)\_s*\zs\<.\{-}\>'
+"syn match headword '\(\. \(dvs\|d\|phrase\|phr\)\|--- vs ---\)\_s*\zs\<.\{-}\>'
 
 
 " REGIONS
@@ -32,9 +32,9 @@ let b:current_syntax = "muse"
 
 "hi def link quotedArea String
 hi def link quoteBody String
-hi def link headword String
-hi def link titleStr String
-hi def link timestamp Number
+"hi def link headword String
+"hi def link titleStr String
+"hi def link timestamp Number
 
 "hi def link defPrefix Keyword
 "hi def link readPrefix Keyword
