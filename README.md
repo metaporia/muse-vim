@@ -1,8 +1,8 @@
 # muse-vim
 
-What is it? A plugin providing a few simple bindings for use with
-[muse](https://gitlab.com/metaporia/muse). For more information on why anybody
-would use muse, see its repository.
+What is it? A plugin providing a syntax highlighting and few simple bindings
+for use with [muse](https://gitlab.com/metaporia/muse). For more information on
+why anybody would use muse, see its repository.
 
 ## Installation
 
