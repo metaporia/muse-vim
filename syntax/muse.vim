@@ -2,8 +2,6 @@ if exists("b:current_syntax")
     finish
 endif
 
-echom "Syntax highlighting code goes here."
-
 " KEYWORDS
 
 syn keyword defPrefix d dvs
@@ -18,7 +16,7 @@ synt keyword quotePrefix quotation q
 
 " MATCHES
 
-syn match timestamp '^ \+\d\+:\d\+:\d\+'
+syn match timestamp '^ *\d\+:\d\+:\d\+'
 
 " REGIONS
 

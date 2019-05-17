@@ -57,8 +57,3 @@ if g:muse_vim_map_keys
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap <buffer> ".g:muse_vim_prefix."v o<Esc>16i <Esc>a--- vs ---<Esc>o"
 endif
 
-" Auto commands
-execute "au BufEnter" g:muse_vim_log_dir."/*" "setfiletype muse"
-execute "au BufEnter" g:muse_vim_log_dir."/*" 'set efm=%EFile:\ %f,%+C>\ (interactive):l:%c:%m,%+Z>\ %.%#,%+C>\ %.%#'
-
-
