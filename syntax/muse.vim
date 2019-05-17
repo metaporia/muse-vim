@@ -25,3 +25,12 @@ syn match timestamp '^ \+\d\+:\d\+:\d\+'
 syn region quotedArea start='"' end='"'
 
 let b:current_syntax = "muse"
+
+hi def link quotedArea String
+hi def link timestamp Number
+hi def link defPrefix Keyword
+hi def link readPrefix Keyword
+hi def link phrasePrefix Keyword
+hi def link commentaryPrefix Keyword
+hi def link dialoguePrefix Keyword
+hi def link quotePrefix Keyword
