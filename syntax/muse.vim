@@ -15,25 +15,44 @@ endif
 
 
 " MATCHES
+" dvs
+syn match inlines '\(dvs\|d\|phrase\|phr\) \+\zs\"*\(\a\|[^x00-x7F]\)\+\>\"*\ze *:' 
+syn match dvsHwLn1 'dvs \+\zs\(\a\|[^x00-x7F]\)\+\>\ze *:' 
+syn match dvsHwLn2 '^\_s\+\(\a\|[^()[]{}_-0-9!@#$%^&*()=+x00-x7F]\)\+\>\ze *:' contains=note
+" \(\a\|[^x00-x7F]\)\+
 
-"syn match timestamp '^ *\d\+:\d\+:\d\+'
-"syn match titleStr '\(\(read\|begin to read\|finish reading\|finish\)\ \+\)\@<=\".*\"'
-syn match quoteBody '\. q\_s\+\zs\"\_.\{-}"'
+syn match comma ','
+
+" headwords (plural) 
+syn match defHws '\. \+\(d\|phrase\|phr\) \zs\(\a\|[^x00-x7F]\)\+$' contains=comma
+
+" inline def
+"syn match inlineDef 'd \+\zs\(\a\|[^x00-x7F]\)\+\>\ze *:' 
 " match from (phr | phrase | d | dvs) until ' :'
-"syn match headword '\(\. \(dvs\|d\|phrase\|phr\)\|--- vs ---\)\_s*\zs\<.\{-}\>'
+"syn match headword '\. \(dvs\|d\|phrase\|phr\)\_s*\zs\<.\{-}\>'
+
+" read titlestr
+syn match titleStr '\(begin to read\|finish reading\|finish\|read\) \+\zs\"\(\a\|[^x00-x7F]\)\+\"'
 
 
-" REGIONS
+"syn region headword2ndLn start='--- vs ---\_s*\zs\<.' skip='.\{-}' end='\>'
+"syn region dvsHwLn1 start='dvs \zs\<' skip='^[\s]*' end='\>'
+syn match quotedArea '^\s\+\"\_.\{-}\"\s*\n'
 
-"syn region quotedArea start='"' end='"'
+syn match timestamp '^ *\d\+:\d\+:\d\+'
 
 
-
-"hi def link quotedArea String
-hi def link quoteBody String
-"hi def link headword String
-"hi def link titleStr String
-"hi def link timestamp Number
+syn match note '[^\a]\+\zs\(N\.B\.\|Note\)\ze *:*'
+hi def link quotedArea Special
+"hi def link quoteBody String
+hi def link dvsHwLn1 Identifier
+hi def link dvsHwLn2 Identifier
+hi def link defHws Function
+hi def link inlines String
+hi def link comma None
+hi def link note Todo
+hi def link titleStr Label
+hi def link timestamp Number
 
 "hi def link defPrefix Keyword
 "hi def link readPrefix Keyword
