@@ -18,9 +18,9 @@ endif
 
 syn match timestamp '^ *\d\+:\d\+:\d\+'
 syn match titleStr '\(\(read\|begin to read\|finish reading\|finish\)\ \+\)\@<=\".*\"'
-syn match quoteBody 'λ\. q\_s\+\zs\"\_.\{-}"'
+syn match quoteBody '\. q\_s\+\zs\"\_.\{-}"'
 " match from (phr | phrase | d | dvs) until ' :'
-"syn match headword '\(λ. \(dvs\|d\|phrase\|phr\)\|--- vs ---\)\_s*\zs\<.\{-}\>'
+syn match headword '\(\. \(dvs\|d\|phrase\|phr\)\|--- vs ---\)\_s*\zs\<.\{-}\>'
 
 
 " REGIONS
