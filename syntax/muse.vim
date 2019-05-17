@@ -37,7 +37,7 @@ syn match titleStr '\(begin to read\|finish reading\|finish\|read\) \+\zs\"\(\a\
 
 "syn region headword2ndLn start='--- vs ---\_s*\zs\<.' skip='.\{-}' end='\>'
 "syn region dvsHwLn1 start='dvs \zs\<' skip='^[\s]*' end='\>'
-syn match quotedArea '^\s\+\"\_.\{-}\"\s*\n'
+syn match quotedArea '^\s\+\"\_[^\"]\{-}\"\s*\n'
 
 syn match timestamp '^ *\d\+:\d\+:\d\+'
 
