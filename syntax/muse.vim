@@ -32,7 +32,7 @@ let b:current_syntax = "muse"
 
 hi def link quotedArea String
 hi def link quoteBody String
-hi def link headword Stringkj
+hi def link headword String
 hi def link timestamp Number
 hi def link defPrefix Keyword
 hi def link readPrefix Keyword
