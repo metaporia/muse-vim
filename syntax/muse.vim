@@ -4,14 +4,14 @@ endif
 
 " KEYWORDS
 
-syn keyword defPrefix d dvs
-syn keyword readPrefix read finish
+syn keyword defPrefix d dvs containedin=headword
+syn keyword readPrefix read finish containedin=titleStr
 "[begin to] read
 "finish [reading]
 synt keyword commentaryPrefix commentary
-synt keyword phrasePrefix phrase phr
+synt keyword phrasePrefix phrase phr containedin=headword
 synt keyword dialoguePrefix dialogue
-synt keyword quotePrefix quotation q
+synt keyword quotePrefix quotation q containedIn=quoteBody
 
 
 " MATCHES
