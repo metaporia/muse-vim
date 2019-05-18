@@ -68,6 +68,8 @@ call plug#end()
 
 let g:muse_vim_log_dir = ~/sputum/muse
 
+syntax enable
+
 set tabstop = 4
 set shiftwidth = 4
 set expandtab
