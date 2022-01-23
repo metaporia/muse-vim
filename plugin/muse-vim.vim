@@ -1,13 +1,13 @@
-" Muse 
+" Muse
 "
-" TODO 
+" TODO
 " □  syntax highlighting bugs:
 "   □  colons in book titles
 "   □  spaces in comparisons, to support phrase disambiguation
 " □  refactor w filetype=muse
-" ▣  add syntax highlighting 
+" ▣  add syntax highlighting
 " □  add search interface (prepopulate scratch buffer w default `Input` vals;
-"    users navigates to fields relevant to lookup, commits search; voilà! 
+"    users navigates to fields relevant to lookup, commits search; voilà!
 
 " Insert entry header/timestamp at the end of the current log file.
 function! MuseLogEntry()
@@ -19,10 +19,10 @@ endfunction
 " log file.
 function! MuseLastRead()
     call MuseLogEntry()
-    call feedkeys(system("muse lastRead --suppress-newline") . "\<ESC>") 
+    call feedkeys(system("muse lastRead --suppress-newline") . "\<ESC>")
 endfunction
 
-" Caluculates and opens (and format) current date's log file name 
+" Caluculates and opens (and format) current date's log file name
 function! MuseToday()
     let l:year = strftime("%Y")[2:3] . "."
     let l:day_month = strftime("%m.%d")
@@ -33,6 +33,20 @@ endfunction
 command! LogToday :call MuseToday()
 command! LogEntry :call MuseLogEntry()
 command! LastRead call MuseLastRead()
+
+
+" Use indentation of previous timestamp to insert new timestamp.
+function! AppendIndentedTimeStamp()
+    let match = search('\d\{2}:\d\{2}:\d\{2} λ', 'b')
+        if (match == 0)
+            execute "normal Go\<c-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
+        else
+            let indentation = indent(match)
+            execute "normal Go\<Esc>".indentation."i \<esc>i\<C-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
+        endif
+endfunction
+
+command! MuseSmartLogEntry call AppendIndentedTimeStamp()
 
 " KEYMAPS
 if !exists('g:muse_vim_map_keys')
@@ -57,7 +71,7 @@ if g:muse_vim_map_keys
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."cr :LastRead<CR>"
     " insert log entry header/timestamp at bottom of file with appropriate
     " indentation
-    execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."t Go<C-r>=strftime(\"%H:%M:%S λ. \")<CR>"
+    execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap ".g:muse_vim_prefix."t :MuseSmartLogEntry<CR>"
     execute "au BufEnter" g:muse_vim_log_dir."/*" "nnoremap <buffer> ".g:muse_vim_prefix."v o<Esc>16i <Esc>a--- vs ---<Esc>o"
 endif
 
