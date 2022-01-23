@@ -42,9 +42,9 @@ function! AppendIndentedTimeStamp()
             execute "normal Go\<c-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
         else
             let indentation = indent(match)
-            execute "normal Go\<Esc>".indentation."i \<esc>i\<C-r>=strftime(\"%H:%M:%S λ.\")\<CR>"
+            execute "normal Go\<Esc>".indentation."i \<esc>i\<C-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
         endif
-    call feedkeys('A', ' ')
+    call feedkeys('A')
 endfunction
 
 command! MuseSmartLogEntry call AppendIndentedTimeStamp()
