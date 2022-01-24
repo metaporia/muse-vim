@@ -38,11 +38,13 @@ command! LastRead call MuseLastRead()
 " Use indentation of previous timestamp to insert new timestamp.
 function! AppendIndentedTimeStamp()
     let match = search('\d\{2}:\d\{2}:\d\{2} λ', 'b')
-        if (match == 0)
-            execute "normal Go\<c-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
-        else
+        if (match != 0)
             let indentation = indent(match)
-            execute "normal Go\<Esc>".indentation."i \<esc>a\<C-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
+            if (indentation > 0)
+                execute "normal Go\<Esc>".indentation."i \<esc>a\<C-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
+            endif
+        else
+            execute "normal Go\<c-r>=strftime(\"%H:%M:%S λ. \")\<CR>"
         endif
     call feedkeys('A')
 endfunction
